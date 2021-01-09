@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+   int n,t,gcd;
+   cin>>t;
+   while(t--)
+   {
+       cin>>n;
+       gcd=n/2;
+       cout<<gcd<<endl;
+   }
+}
