@@ -1,0 +1,12 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b,c,minimum,A,B,C,D;
+    cin>>a>>b>>c;
+ 
+    minimum=max(c,(max(a,b)))-min(c,(min(a,b)));
+    cout<<minimum<<endl;
+    return 0;
+}
+ 
