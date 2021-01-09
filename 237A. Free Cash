@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int n, h, m, hi, mi, count=1, cash=1,i;
+    scanf("%d", &n);
+    scanf("%d%d", &hi, &mi);
+ 
+ 
+    for(i=1;i<n;i++)
+    {
+        scanf("%d%d", &h, &m);
+        if (h == hi && m == mi)
+        {
+            count ++;
+            if (count > cash)
+            {
+                cash = count;
+            }
+        }
+        else
+        {
+            count = 1;
+        }
+        hi = h;
+        mi = m;
+    }
+    printf("%d\n", cash);
+    return 0;
+}
