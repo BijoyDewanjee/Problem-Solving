@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,n;
+	cin>>t;
+	while(t--){
+	cin>>n;
+	int x=0;
+	string s1,s2="ESWN";
+	cin>>s1;
+	for(int i=0;i<s1.size();i++){
+		if(s1[i]=='0'){
+			x++;
+			x%=4;
+		}
+		else{
+		x=(x-1+4)%4; /// reminder negative hoi na.Ajonno divisor + korsi
+		}
+	}
+	cout<<s2[x]<<endl;
+	}
+}
