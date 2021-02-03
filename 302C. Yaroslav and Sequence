@@ -1,0 +1,27 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int n,m,k,x,y,p=0,s=0,f=0,h=100000000000;
+    cin>>n;
+    for(int i=0;i<2*n-1;i++){
+        cin>>x;
+        if(x<0){//x neative hole
+            x=0-x;///absolute value
+            p++;// negative number count korbo
+        }
+        h=min(h,x);
+        s+=x;/// sum kortechi
+    }
+    if(p%2==1){ /// negative odd number hole
+        if(p==n) cout<<s<<endl;
+        else if(n%2==1){
+            if(p<=n) x=2*n-p-1;
+            else x=p-n;
+            if(x%2==0) cout<<s<<endl;
+            else cout<<s-(h*2)<<endl;
+        }
+        else cout<<s-(h*2)<<endl;
+    }
+    else cout<<s<<endl; /// p even shob positive hole
+}
