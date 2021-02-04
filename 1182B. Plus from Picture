@@ -1,0 +1,61 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,m,f,x,y;
+	cin>>n>>m;  /// n=height, m= width
+	string s,a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+	for(int i=1;i<n-1;i++){
+            f=0;
+	for(int j=1;j<m-1;j++){
+ 	if(a[i][j]=='*' && a[i-1][j]=='*' && a[i+1][j]=='*' && a[i][j-1]=='*' && a[i][j+1]=='*'){
+        a[i][j]='.';
+        a[i-1][j]='.';
+        a[i+1][j]='.';
+        a[i][j-1]='.';
+        a[i][j+1]='.';
+        x=i-2;
+        y=j;
+        while(x>=0&&a[x][y]=='*'){
+            a[x][y]='.';
+            x--;
+        }
+        x=i+2;
+        y=j;
+        while(x<n && a[x][y]=='*'){
+            a[x][y]='.';
+            x++;
+        }
+         x=i;
+        y=j-2;
+        while(y>=0&&a[x][y]=='*'){
+            a[x][y]='.';
+            y--;
+        }
+         x=i;
+        y=j+2;
+        while(y<m&&a[x][y]=='*'){
+            a[x][y]='.';
+            y++;
+        }
+        f=1;
+        break;
+	}
+	}
+	 if(f==1) break;
+	}
+	if(f==0) cout<<"NO"<<endl;
+	else{
+            f=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(a[i][j]=='*') f=1;
+
+            }
+        }
+        if(f==1) cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
+
+	}
+}
