@@ -1,0 +1,32 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,m,f,x,y;
+	cin>>n;
+	string s,a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+ 
+	for(int i=1;i<n-1;i++){///n-1 karon center 1 shesh row and shesh coloum a hote pare na
+ 
+	for(int j=1;j<n-1;j++){
+ 	if(a[i][j]=='.' && a[i-1][j]=='.' && a[i+1][j]=='.' && a[i][j-1]=='.' && a[i][j+1]=='.'){
+        a[i][j]='#';
+        a[i-1][j]='#';
+        a[i+1][j]='#';
+        a[i][j-1]='#';
+        a[i][j+1]='#';
+ 	}
+	}
+	}
+       f=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(a[i][j]=='.') f=1;
+ 
+            }
+        }
+        if(f==1) cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
+ 
+	}
