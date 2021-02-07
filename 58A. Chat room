@@ -1,0 +1,15 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s,s1="hello";
+    while(cin>>s){
+            int x=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]==s1[x]){
+                x++;
+            }
+        }
+        if(s1.size()==x) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+}
