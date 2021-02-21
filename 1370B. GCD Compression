@@ -1,0 +1,28 @@
+# include<bits/stdc++.h>
+using namespace std;
+# define ll long long
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        ll int n,x=0;
+        cin>>n;
+        ll a[2*n+2];
+        vector<ll>v1,v2;
+        for(int i=1;i<=2*n;i++) {
+            cin>>a[i];
+            if(a[i]%2==1) v1.push_back(i);
+            else v2.push_back(i);
+    }// vector unsigned return kore . fole -1 return howai akti garbage value thake. Tai typecast korbo
+    for(int i=0;i<(ll)v1.size()-1 && x<n-1;i+=2){// i=i+2 karon i++ kotle akta number 2 bar print hobe
+        cout<<v1[i] <<" "<<v1[i+1] <<endl;
+        x++;
+    }
+
+        for(int i=0;i<(ll)v2.size()-1 && x<n-1;i+=2){/// n-1 karon n =10 hole pair  hoi 5ta. but print korte hobe  4 ta.
+        cout<<v2[i] <<" "<<v2[i+1] <<endl;
+        x++;
+    }
+}
+}
