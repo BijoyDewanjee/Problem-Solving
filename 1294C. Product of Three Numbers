@@ -1,0 +1,30 @@
+# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b,c,n,t,m,p,f;
+    cin>>t;
+    while(t--){
+            f=0;
+        cin>>n;
+        for(int a=2;a*a*a<=n;a++){ 
+            if(n%a==0){
+                m=n/a;
+                for(b=a+1;b*b<=m;b++){
+                    if(m%b==0){
+                       c=m/b;
+                       if(a*b*c==n && a!=b && b!=c && c!=a && c!=1 ){
+                        cout<<"YES"<<endl;
+                        cout<<a<<" "<<b<<" "<<c<<endl;
+                        f=1;
+                        break;
+                       }
+                    }
+
+                }
+                 if(f==1) break;
+            }
+        }
+        if(f==0) cout<<"NO"<<endl;
+    }
+}
