@@ -1,0 +1,49 @@
+# include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    int t, n;
+    cin>>t;
+    while(t--)
+    {
+        int x,y,p,q,f=0;
+        string s;
+        cin>>n;
+        vector<pair<int,int> > v;
+        for(int i=0;i<n;i++){
+            cin>>x>>y;
+            v.push_back({x,y});
+        }
+        sort(v.begin(),v.end());
+        x=0,y=0;
+        for(int i=0;i<v.size();i++){
+            p=v[i].first;
+            q=v[i].second;
+            if(p<x||q<y){
+                f=1;
+                break;
+            }
+
+
+        while(x<p){
+            x++;
+            s+='R';
+        }
+
+         while(y<q){
+            y++;
+            s+='U';
+        }
+        }
+
+        if(f==1) cout<<"NO"<<endl;
+        else {
+            cout<<"YES"<<endl;
+            cout<<s<<endl;
+        }
+
+    }
+
+    return 0;
+}
