@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n,t;
+   while(cin>>n>>t){
+    if(n==1 && t==10) cout<<"-1"<<endl;
+    else if(t<10){
+        for(int i=1;i<=n;i++){
+            cout<<t;
+        }
+        cout<<endl;
+    }
+    else if(t==10){
+         cout<<"1";
+        for(int i=1;i<n;i++){
+
+            cout<<"0";
+        }
+        cout<<endl;
+    }
+   }
+}
+
+
