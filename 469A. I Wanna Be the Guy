@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n;
+  while(cin>>n){
+    int p,q,x,y,m;
+    cin>>p;
+     set<int>s;
+     for(int i=0;i<p;i++){
+        cin>>x;
+        s.insert(x);
+
+     }
+     cin>>q;
+
+      for(int i=0;i<q;i++){
+        cin>>y;
+        s.insert(y);
+
+
+      }
+      int c=1;
+      for(auto m:s){
+
+        if(m==c){
+            c++;
+            continue;
+        }
+        else{
+            break;
+        }
+     }
+
+
+    if(c==n+1) cout<<"I become the guy."<<endl;
+     else cout<<"Oh, my keyboard!"<<endl;
+
+  }
+}
