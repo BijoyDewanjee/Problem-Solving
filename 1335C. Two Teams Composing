@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int t,n;
+  cin>>t;
+  while(t--){
+        cin>>n;
+    int m,x,y,i,j,max=0,a[n+2];
+    set<int>s;
+    unordered_map<int,int>mp;
+    mp.max_load_factor(0.25);
+    mp.reserve(1024);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        s.insert(a[i]);
+        mp[a[i]]++;
+        if(mp[a[i]]>max){
+            max=mp[a[i]];
+        }
+    }
+    if(max==s.size()) cout<<max-1<<endl;
+    else {
+        if(max<s.size()) cout<<max<<endl;
+       else  cout<<s.size()<<endl;
+    }
+  }
+}
