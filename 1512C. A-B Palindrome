@@ -1,0 +1,76 @@
+# include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main ()
+{
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       int a,b,f=0,p=0,q=0,x,y;
+       cin>>a>>b;
+       x=a;
+       y=b;
+       string s;
+       cin>>s;
+       for(int i=0,j=s.size()-1;i<s.size()/2;i++,j--){
+        if(s[i]!=s[j]){
+            if(s[i]=='?'){
+                s[i]=s[j];
+                if(s[j]=='1') b-=2;///karon protibar 2ta 1 total thake bad jabe.
+                else a-=2;//karon protibar 2ta 0 total thake bad jabe.
+            }
+            else if(s[j]=='?'){
+                s[j]=s[i];
+                if(s[i]=='1') b-=2;///karon protibar 2ta 1 total thake bad jabe.
+                else a-=2;//karon protibar 2ta 0 total thake bad jabe.
+
+            }
+            else{
+                f=1;
+                break;
+            }
+        }
+
+        else if(s[i]!='?'){
+            if(s[i]=='1') b-=2;
+            else a-=2;
+        }
+       }
+
+       for(int i=0,j=s.size()-1;i<s.size()/2;i++,j-- ){
+            if((s[i]=='?') && a>1){
+                s[i]='0';
+                s[j]='0';
+                a-=2;
+            }
+        else if(s[i]=='?' && b>1){
+                s[i]='1';
+                s[j]='1';
+                b-=2;
+            }
+            else if(s[i]=='?'){
+                f=1;
+            }
+       }
+       if((s.size()%2==1) && (s[s.size()/2]=='?')){
+        if(a>0){
+            s[s.size()/2]='0';
+
+        }
+            else{
+            s[s.size()/2]='1';
+
+        }
+       }
+       for(int i=0;i<s.size();i++){
+        if(s[i]=='0') p++;
+        else q++;
+
+        }
+        if((p==x) && (q==y) &&(f==0)){
+                cout<<s<<endl;
+        }
+        else cout<<-1<<endl;
+   }
+}
