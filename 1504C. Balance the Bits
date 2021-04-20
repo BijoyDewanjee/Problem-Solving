@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+   ll t,n;
+   cin>>t;
+   while(t--){
+    cin>>n;
+    string s,a,b;
+    cin>>s;
+    ll p=0,c=0;
+    if(s[0]=='0' || s[s.size()-1]=='0') {
+            cout<<"NO"<<endl;
+            continue;
+        }
+    for(ll i=0;i<s.size();i++){
+        if(s[i]=='0') p++;
+        else c++;
+    }
+    if(p%2==1) {
+            cout<<"NO"<<endl;
+            continue;
+            }
+
+    for(ll i=0;i<s.size();i++){
+        if(s[i]=='1'){
+            if(c!=0){
+                a+='(';
+                b+='(';
+                c-=2;
+            }
+            else{
+                a+=')';
+                b+=')';
+            }
+        }
+
+       else{
+        if(p%2==0){
+            a+='(';
+            b+=')';
+            p--;
+        }
+        else{
+            a+=')';
+            b+='(';
+            p--;
+        }
+       }
+
+    }
+    cout<<"YES"<<endl;
+    cout<<a<<endl<<b<<endl;
+
+
+   }
+}
