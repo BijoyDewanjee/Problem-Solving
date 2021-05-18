@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t,n;
+   cin>>t;
+   while(t--){
+    cin>>n;
+    int x=4*n;
+    while(n--){
+        cout<<x<<" ";
+        x-=2;
+    }
+    cout<<endl;
+   }
+}
+
