@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        int n,x,r,m;
+        cin>>n>>x;
+        if(n<=2) cout<<"1"<<endl;
+        else{
+            r=n-2;
+            if(r%x==0) m=r/x;
+            else m=r/x+1;
+            cout<<m+1<<endl;
+        }
+    }
+}
