@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+       long long  int n,a,b,f=0;
+        cin>>n>>a>>b;
+        if(a==1){
+            if((n-1)%b==0) cout<<"Yes"<<endl;
+            else cout<<"No"<<endl;
+        }
+        else{
+          long long int p=1,x;
+            while(n>=p) {
+            x=n-p;
+            p=p*a;
+            if(x%b==0) {
+                f=1;
+                break;
+            }
+        }
+            if(f==1) cout<<"Yes"<<endl;
+            else cout<<"No"<<endl;
+        }
+    }
+}
