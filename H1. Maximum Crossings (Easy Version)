@@ -1,6 +1,3 @@
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -141,12 +138,3 @@ int main()
  
     return 0;
 }
-Click to see test details
-
-Codeforces (c) Copyright 2010-2022 Mike Mirzayanov
-The only programming contests Web 2.0 platform
-Server time: May/26/2022 17:32:22UTC+6 (f1).
-Desktop version, switch to mobile version.
-Privacy Policy
-Supported by
-Telegram ИТМО
